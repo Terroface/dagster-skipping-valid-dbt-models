@@ -70,5 +70,6 @@ The core issue is that Dagster's understanding of the dbt asset graph (from the 
 1. Materialize all assets. You will see that the `downstream_dbt_asset` fails to materialize because its upstream dependency `non_python_interacting_dbt_asset` was skipped.
 
 ## The desired behavior
+> Note: you need to have run the undesired behavior steps first. Otherwise the python asset won't have run and the downstream dbt asset will fail to materialize because its "source" data is missing.
 1. `cd dbt`
 1. `uv run dbt build --vars '{is_non_python_interacting_dbt_asset_enabled: false}'` to see that dbt correctly skips the model when the var is set to false and yet still materializes the downstream asset.
