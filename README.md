@@ -66,7 +66,7 @@ The core issue is that Dagster's understanding of the dbt asset graph (from the 
 ## The undesired behavior
 1. `cd dagster`
 1. `echo "IS_NON_PYTHON_INTERACTING_DBT_ASSET_ENABLED=false" > .env` to create a .env file with an env var that controls the runtime dbt var dagster will pass to dbt
-1. `uv run make dagster` to start the dagster instance.
+1. `uv run dagster dev` to start the dagster instance.
 1. Materialize all assets. You will see that the `downstream_dbt_asset` fails to materialize because its upstream dependency `non_python_interacting_dbt_asset` was skipped.
 
 ## The desired behavior
