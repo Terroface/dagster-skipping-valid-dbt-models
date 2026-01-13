@@ -1,0 +1,16 @@
+[project]
+name = "in-1258-skipping-valid-models-demo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dagster-dbt>=0.28.10",
+    "dagster-duckdb>=0.28.10",
+    "dagster-duckdb-pandas>=0.28.10",
+    "dagster-webserver>=1.12.10",
+    "dbt-duckdb>=1.10.0",
+]
+
+[tool.dagster]
+module_name = "my_dg_project.definitions"

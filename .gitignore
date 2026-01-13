@@ -1,0 +1,15 @@
+.tmp*/
+**/.tmp*/
+
+**/*.egg-info/*
+
+**/.venv/*
+
+**/__pycache__/*
+
+**/.env
+
+**/*.duckdb
+
+# dbt
+**/logs/*
