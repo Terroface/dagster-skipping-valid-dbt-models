@@ -1,6 +1,8 @@
-This repo demonstrates an issue I am running into with Dagster + DBT where I want to skip certain models based on a variable passed from Dagster to DBT.
+This repo demonstrates how issues can arise because of a mismatch between Dagster's understanding of the dbt asset graph (from the manifest) and the actual dbt asset graph at runtime when using variables to conditionally skip models.
 
-# Background
+The dagster project is standalone and requires only `uv` and `python` to run. Jump to [How to recreate the issue](#how-to-recreate-the-issue) to get started.
+
+# Illustration of the issue
 
 ## Skippable dbt model
 I have a DAG that looks like this:
