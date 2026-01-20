@@ -5,7 +5,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "dagster-dbt>=0.28.10",
+    # "dagster-dbt>=0.28.10",    "dagster-dbt @ file:///Users/amirjaberinsighta/Documents/GitHub/projects/dagster/python_modules/libraries/dagster-dbt",
+    "dagster-dbt @ file:///Users/amirjaberinsighta/Documents/GitHub/projects/dagster/python_modules/libraries/dagster-dbt",
     "dagster-duckdb>=0.28.10",
     "dagster-duckdb-pandas>=0.28.10",
     "dagster-webserver>=1.12.10",

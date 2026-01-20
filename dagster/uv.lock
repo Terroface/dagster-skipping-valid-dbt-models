@@ -225,8 +225,8 @@ wheels = [
 
 [[package]]
 name = "dagster-dbt"
-version = "0.28.10"
-source = { registry = "https://pypi.org/simple" }
+version = "1!0+dev"
+source = { directory = "../../dagster/python_modules/libraries/dagster-dbt" }
 dependencies = [
     { name = "dagster" },
     { name = "dbt-core" },
@@ -240,10 +240,30 @@ dependencies = [
     { name = "sqlglot", extra = ["rs"] },
     { name = "typer" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/13/c3/6135024daa791b194dda3571541161b3439bcf1e289b889faafc8f2cb167/dagster_dbt-0.28.10.tar.gz", hash = "sha256:87e06fa6911a89cd275968caa1b086a77e5fcd3eae33fb99109f4ad75f37ea03", size = 100036, upload-time = "2026-01-09T17:12:48.235Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/56/34/40b78f5ea560b8d88c64cc3abf22d56e04c4f5dada0a4bc4e0d3132be912/dagster_dbt-0.28.10-py3-none-any.whl", hash = "sha256:49ac63b7dd44304d0a7c64b896389c1fb54453da69521f0631b713f984e71f8f", size = 120279, upload-time = "2026-01-09T17:12:46.374Z" },
+
+[package.metadata]
+requires-dist = [
+    { name = "dagster" },
+    { name = "dagster-duckdb", marker = "extra == 'test'" },
+    { name = "dagster-duckdb-pandas", marker = "extra == 'test'" },
+    { name = "dbt-core", specifier = ">=1.7,<1.12" },
+    { name = "dbt-duckdb", marker = "extra == 'test'", specifier = "<1.9.2" },
+    { name = "duckdb", marker = "extra == 'test'", specifier = "<1.4.0" },
+    { name = "gitpython" },
+    { name = "jinja2" },
+    { name = "networkx" },
+    { name = "orjson" },
+    { name = "packaging" },
+    { name = "pytest-order", marker = "extra == 'test'" },
+    { name = "pytest-order", marker = "extra == 'test-bare'" },
+    { name = "pytest-rerunfailures", marker = "extra == 'test'" },
+    { name = "pytest-rerunfailures", marker = "extra == 'test-bare'" },
+    { name = "requests" },
+    { name = "rich" },
+    { name = "sqlglot", extras = ["rs"], specifier = "<28.1.0" },
+    { name = "typer", specifier = ">=0.9.0" },
 ]
+provides-extras = ["test-bare", "test"]
 
 [[package]]
 name = "dagster-duckdb"
@@ -770,7 +790,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "dagster-dbt", specifier = ">=0.28.10" },
+    { name = "dagster-dbt", directory = "../../dagster/python_modules/libraries/dagster-dbt" },
     { name = "dagster-duckdb", specifier = ">=0.28.10" },
     { name = "dagster-duckdb-pandas", specifier = ">=0.28.10" },
     { name = "dagster-webserver", specifier = ">=1.12.10" },
