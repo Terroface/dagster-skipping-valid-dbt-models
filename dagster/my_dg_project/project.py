@@ -9,7 +9,9 @@ dbt_project = DbtProject(
         "parse",
         "--quiet",
         "--vars",
-        f'{{"is_non_python_interacting_dbt_asset_enabled": {os.getenv("IS_NON_PYTHON_INTERACTING_DBT_ASSET_ENABLED", "true").lower() == "true"}}}',
+        f'{{"is_non_python_interacting_dbt_asset_enabled": {
+            os.getenv("IS_NON_PYTHON_INTERACTING_DBT_ASSET_ENABLED", "true").lower() == "true"
+            }}}',
     ]
 )
 dbt_project.prepare_if_dev()
